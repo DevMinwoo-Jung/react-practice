@@ -1,6 +1,13 @@
-const React = require("react");
-const ReactDom= require("react-dom");
-const WordsRelay = require('./wordsRelay');
+// const React = require("react");
+// const ReactDom= require("react-dom");
+// const WordsRelay = require('./wordsRelay');
+// const NumberBaseBall = require('./numberBaseball');
 
-ReactDom.render(<WordsRelay />, document.querySelector('#root'));
+
+import React  from "react";
+import ReactDom from "react-dom";
+import WordsRelay  from './wordsRelay';
+import NumberBaseBall  from './numberBaseball';
+
+ReactDom.render(<NumberBaseBall />, document.querySelector('#root'));
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="root">
+      <script type="text/babel">
+        const e = React.createElement;
+
+        class GuGuDan extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              first: Math.ceil(Math.random() * 9),
+              second: Math.ceil(Math.random() * 9),
+              value: '',
+              result: '',
+              answer: '',
+              showAnswer: '',
+            };
+          }
+          console.log("카운트!");
+          onSubmit =(e) => {
+                  e.preventDefault();
+                  if(parseInt(this.state.value) === this.state.first * this.state.second){
+                    this.setState((prevState) => {
+                      return {
+                      result: `정답! ${prevState.value}`,
+                      first: Math.ceil(Math.random() * 9),
+                      second: Math.ceil(Math.random() * 9),
+                      value:'',
+                      showAnswer: '',
+                      };
+                    });
+                    this.input.focus();
+                  } else {
+                    this.setState({
+                      result: "땡!",
+                      value:'',
+                      showAnswer: `정답은 ${this.state.first * this.state.second}`,
+                    });
+                  }
+                  this.input.focus();
+          };
+
+          onChange = (e) => {
+            this.setState({value: e.target.value})
+          };
+  // signle tag에 "/" 을 해주는 것은 jsx가 xml이기 때문
+  // jsx에 javascript가 최대한 들어가지 않게 해라!
+
+          render(){
+            return (
+              <div>
+                <div>{this.state.first}곱하기{this.state.second}는?</div>
+                <form onSubmit={this.onSubmit}>
+                  <input ref={(c) => {this.input = c;}} type="number" value={this.state.value} onChange={this.onChange}/>
+                  <button>입력:</button>
+                  <div>{this.state.result} {this.state.showAnswer}</div>
+                </form>
+              </div>
+            ) 
+          }
+        }
+      </script>
+      <script type="text/babel">
+        // ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+        // 이것 역시 마찬가지
+        ReactDOM.render(<><GuGuDan/></>, document.querySelector('#root'));
+      </script>
+    </div>
+</body>
+</html>
