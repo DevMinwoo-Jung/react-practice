@@ -8,6 +8,7 @@ import React  from "react";
 import ReactDom from "react-dom";
 import WordsRelay  from './wordsRelay';
 import NumberBaseBall  from './numberBaseball';
+import RSP from './RSP';
 
-ReactDom.render(<NumberBaseBall />, document.querySelector('#root'));
+ReactDom.render(<RSP />, document.querySelector('#root'));
 
