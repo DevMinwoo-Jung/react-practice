@@ -29,7 +29,9 @@ module.exports = {
     }],
   },
   plugins: [
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin({
+      overlay: false,
+    })
   ],
   output: {
     path: path.join(__dirname, 'dist'),
