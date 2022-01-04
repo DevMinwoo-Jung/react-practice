@@ -9,6 +9,7 @@ import ReactDom from "react-dom";
 import WordsRelay  from './wordsRelay';
 import NumberBaseBall  from './numberBaseball';
 import RSP from './RSP';
+import Lotto from './lotto'
 
-ReactDom.render(<RSP />, document.querySelector('#root'));
+ReactDom.render(<Lotto />, document.querySelector('#root'));
 
