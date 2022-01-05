@@ -9,7 +9,8 @@ import ReactDom from "react-dom";
 import WordsRelay  from './wordsRelay';
 import NumberBaseBall  from './numberBaseball';
 import RSP from './RSP';
-import Lotto from './lotto'
+import Lotto from './lotto';
+import Tictaetoe from './tictaetoc';
 
-ReactDom.render(<Lotto />, document.querySelector('#root'));
+ReactDom.render(<Tictaetoe />, document.querySelector('#root'));
 
