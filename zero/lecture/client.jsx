@@ -11,6 +11,7 @@ import NumberBaseBall  from './numberBaseball';
 import RSP from './RSP';
 import Lotto from './lotto';
 import Tictaetoe from './tictaetoc';
+import Mine from './mine';
 
-ReactDom.render(<Tictaetoe />, document.querySelector('#root'));
+ReactDom.render(<Mine />, document.querySelector('#root'));
 
