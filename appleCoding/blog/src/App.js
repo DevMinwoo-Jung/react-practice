@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Modal from './modal';
 
 function App() {
   let [title, setTitle] = useState([
@@ -10,14 +11,24 @@ function App() {
 
   let [like, setLike] = useState(0);
 
+  const [showModal, setShowModal] = useState(false);
+
   function goLike(){
     setLike(like + 1);
   }
 
   function goChangeTitle(){
     const newTitle = [...title];
-    newTitle[0] = '코딩좀 하자..!';
+    newTitle[0] = '코딩 공부좀 하자..!';
     setTitle(newTitle);
+  }
+
+  function goShowModal(){
+    setShowModal(true);
+  }
+
+  function goOnClose(){
+    setShowModal(false);
   }
 
   return (
@@ -37,10 +48,11 @@ function App() {
         <hr />
       </div>
       <div className="list">
-        <h3>{title[2]}</h3>
+        <h3 onClick={goShowModal}>{title[2]}</h3>
         <p>1월 23일</p>
         <hr />
       </div>
+      { showModal === true ? <Modal onClose={goOnClose}/> : null }
     </div>
   );
 }
