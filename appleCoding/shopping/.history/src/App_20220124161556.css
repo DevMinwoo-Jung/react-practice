@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.jumbo{
+  background-color: gray;
+  height: 15rem;
+  width: 100%;
+}
+
+.background{
+  background-image: url('../public/shoes3.jpg');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  color: white;
+
+}
+

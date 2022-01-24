@@ -1,0 +1,25 @@
+@import './_reset.scss';
+
+$mainColor : #ff0000;
+
+.red{
+  color:$mainColor;
+}
+
+// div.container h4 {
+//   color: blue;
+// }
+
+// div.container p {
+//   color: blue;
+// }
+// scss는 아래처럼 쌉가능
+
+div.container {
+  h4 {
+    color: blue;
+  }
+  p {
+    color: yellow;
+  }
+}

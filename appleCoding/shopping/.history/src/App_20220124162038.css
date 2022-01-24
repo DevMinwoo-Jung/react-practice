@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.jumbo{
+  background-color: gray;
+  height: 15rem;
+  width: 100%;
+}
+
+.background{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  color: black;
+
+}
+

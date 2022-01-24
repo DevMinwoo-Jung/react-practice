@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+$mainColor : #ff0000;
+
+.red{
+  color:$mainColor;
+}
