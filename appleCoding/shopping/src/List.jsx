@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const List = ({data}) => {
+const List = memo(({data}) => {
 
   return (
     <div className="col-md-4">
@@ -13,6 +13,6 @@ const List = ({data}) => {
       <p>상품설명: {data.content} 가격: {data.price}</p>
     </div>
   );
-};
+});
 
 export default List;
