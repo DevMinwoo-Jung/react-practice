@@ -48,3 +48,14 @@ $alertColor-blue: #1d19cf;
 alert p {
   margin-bottom : 0;
 }
+
+// ani 시작 떄 적용
+.wow-enter {
+  opacity: 0;
+}
+
+// ani 동작 때 적용
+.wow-enter-active {
+  opacity: 1;
+  transform: all 500ms;
+}
