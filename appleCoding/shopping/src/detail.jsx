@@ -7,7 +7,7 @@ import "./detail.scss";
 import Stock from "./Stock";
 import { CSSTransition } from "react-transition-group";
 import { connect, useDispatch } from "react-redux";
-import WatchedList from './WatchedList';
+import WatchedList from "./WatchedList";
 
 // let box = styled.div`
 //   padding: 20px;
@@ -22,13 +22,13 @@ const Detail = (props) => {
   const [tab, setTab] = useState(0);
   const [tabswitch, setTabSwitch] = useState(false);
   let stocks = useContext(stockContext);
+  let arr = localStorage.getItem("watched");
 
   let { id } = useParams();
   let history = useHistory();
   let detailItem = props.shoes.find((detail) => {
     return (detail.id = id);
   });
-
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -40,18 +40,26 @@ const Detail = (props) => {
   }, []);
 
   useEffect(() => {
-    localStorage.getItem('watched');
-  },[])
+    var arr = localStorage.getItem("watched");
+    if (arr === null) {
+      arr = [];
+    } else {
+      arr = JSON.parse(arr);
+    }
+    arr.push(id);
+    new Set(arr);
+    arr = [...arr];
+    localStorage.setItem("watched", JSON.stringify(arr));
+  }, []);
 
   function goMinusItemStock(target) {
     target = id;
     props.minusItemStock(target);
   }
-  
+
   const dispatch = useDispatch();
 
   return (
-    
     <div className="container">
       <box>
         <title>asdasd</title>
@@ -88,7 +96,7 @@ const Detail = (props) => {
                 type: "addItem",
                 payload: { id: detailItem.id, name: detailItem.title, quan: 1 },
               });
-              history.push('/cart');
+              history.push("/cart");
             }}
           >
             주문하기
@@ -138,7 +146,9 @@ const Detail = (props) => {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <WatchedList itemId={detailItem.id}/>
+          {
+            arr.map((ele) => <WatchedList id={ele} />)
+          }
           <CSSTransition in={true} classNames="wow" timeout={500}>
             <TabContent tab={tab} setTabSwitch={setTabSwitch} />
           </CSSTransition>
