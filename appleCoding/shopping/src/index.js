@@ -19,6 +19,8 @@ function alertReducer(state = alertBasic, action) {
   }
 }
 
+
+
 let basicState = [
   { id: 0, name: "멋진신발", quan: 2 },
   { id: 1, name: "멋진신발1", quan: 21 },

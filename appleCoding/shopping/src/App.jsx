@@ -76,6 +76,7 @@ function App() {
           </div>
         </div>
         <div className="container">
+
           <stockContext.Provider value={stock}>
             {/* 값 공유를 원하는 HTML들을 <범위.Provider>로 감싸고 value={공유를 원하는 값} */}
             <div className="row">
@@ -84,12 +85,13 @@ function App() {
               ))}
             </div>
           </stockContext.Provider>
+          
           {loading === true ? <Loading /> : null}
-          <div className="row">
+          {/* <div className="row">
             {moreShoes === null
               ? ""
               : moreShoes.map((data) => <List data={data} key={data.id} />)}
-          </div>
+          </div> */}
 
           <button className="btn btn-primary" onClick={answerGetAxios}>
             더보기

@@ -39,12 +39,17 @@ const Detail = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.getItem('watched');
+  },[])
+
   function goMinusItemStock(target) {
     target = id;
     props.minusItemStock(target);
   }
   
   const dispatch = useDispatch();
+
   return (
     
     <div className="container">
